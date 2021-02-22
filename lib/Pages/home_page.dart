@@ -35,6 +35,7 @@ class _home_page_State extends State<home_page> {
           child:
           ListView(
             children: [
+              Text("coucou"),
               Column(
                 children: [
                   Card(

@@ -19,7 +19,16 @@ class _home_page_State extends State<home_page> {
   String _choix = "Aucun choix";
   
   List<Article> art;
-  
+
+
+  @override
+  void initState() {
+    getPopularArticle().then((value){
+
+      print('Async done');
+    });
+    super.initState();
+  }
 
 
   @override
@@ -35,7 +44,6 @@ class _home_page_State extends State<home_page> {
           child:
           ListView(
             children: [
-              Text("coucou"),
               Column(
                 children: [
                   Card(
@@ -73,7 +81,179 @@ class _home_page_State extends State<home_page> {
                   //      );
                   //    }
                   //),
+
+
+                  //container qui sera l'actu des posts
                   Container(
+                    margin: EdgeInsets.only(top:5,bottom: 5,right: 20,left: 20),
+                    child: Card(
+                      elevation: 10,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child:  Row(
+                              children: [
+                                Expanded(
+                                  child: Text("Titre du post",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child:
+                                  Card(
+                                    elevation: 5.0,
+                                    child: Container(
+                                      //width: 350,
+                                      height: 150,
+                                      child: Image.asset(
+                                        "Assets/Images/owl-2.jpg",
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                    child: Text("blabla je sais pas quoi dire de cette description qui sert probablement a rien mais je l'aimes bien quand meme.")
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(top:5,bottom: 5,right: 20,left: 20),
+                    child: Card(
+                      elevation: 10,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child:  Row(
+                              children: [
+                                Expanded(
+                                  child: Text("Titre du post",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child:
+                                  Card(
+                                    elevation: 5.0,
+                                    child: Container(
+                                      //width: 350,
+                                      height: 150,
+                                      child: Image.asset(
+                                        "Assets/Images/owl-2.jpg",
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                    child: Text("blabla je sais pas quoi dire de cette description qui sert probablement a rien mais je l'aimes bien quand meme.")
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),Container(
+                    margin: EdgeInsets.only(top:5,bottom: 5,right: 20,left: 20),
+                    child: Card(
+                      elevation: 10,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child:  Row(
+                              children: [
+                                Expanded(
+                                  child: Text("Titre du post",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child:
+                                  Card(
+                                    elevation: 5.0,
+                                    child: Container(
+                                      //width: 350,
+                                      height: 150,
+                                      child: Image.asset(
+                                        "Assets/Images/owl-2.jpg",
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                    child: Text("blabla je sais pas quoi dire de cette description qui sert probablement a rien mais je l'aimes bien quand meme.")
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),Container(
+                    margin: EdgeInsets.only(top:5,bottom: 5,right: 20,left: 20),
+                    child: Card(
+                      elevation: 10,
+                      child: Column(
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child:  Row(
+                              children: [
+                                Expanded(
+                                  child: Text("Titre du post",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: EdgeInsets.all(10),
+                            child: Row(
+                              children: [
+                                Expanded(
+                                  child:
+                                  Card(
+                                    elevation: 5.0,
+                                    child: Container(
+                                      //width: 350,
+                                      height: 150,
+                                      child: Image.asset(
+                                        "Assets/Images/owl-2.jpg",
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                                Expanded(
+                                    child: Text("blabla je sais pas quoi dire de cette description qui sert probablement a rien mais je l'aimes bien quand meme.")
+                                )
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),Container(
                     margin: EdgeInsets.only(top:5,bottom: 5,right: 20,left: 20),
                     child: Card(
                       elevation: 10,

@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cube/Models/Article.dart';
@@ -123,6 +125,20 @@ class _home_page_State extends State<home_page> {
                               ],
                             ),
                           ),
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (BuildContext context) {
+                                    return Forum(title: "Forum",);
+                                  })
+                              );
+                            },
+                            child: new Padding(
+                              padding: new EdgeInsets.all(10.0),
+                              child:Text("Accéder au post",style: TextStyle(color: Colors.blue,fontSize: 13,decoration: TextDecoration.underline)),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -164,6 +180,20 @@ class _home_page_State extends State<home_page> {
                                     child: Text("${article[1].Overview}")
                                 )
                               ],
+                            ),
+                          ),
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (BuildContext context) {
+                                    return Forum(title: "Forum",);
+                                  })
+                              );
+                            },
+                            child: new Padding(
+                              padding: new EdgeInsets.all(10.0),
+                              child:Text("Accéder au post",style: TextStyle(color: Colors.blue,fontSize: 13,decoration: TextDecoration.underline)),
                             ),
                           ),
                         ],
@@ -208,6 +238,20 @@ class _home_page_State extends State<home_page> {
                               ],
                             ),
                           ),
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (BuildContext context) {
+                                    return Forum(title: "Forum",);
+                                  })
+                              );
+                            },
+                            child: new Padding(
+                              padding: new EdgeInsets.all(10.0),
+                              child:Text("Accéder au post",style: TextStyle(color: Colors.blue,fontSize: 13,decoration: TextDecoration.underline)),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -250,6 +294,20 @@ class _home_page_State extends State<home_page> {
                               ],
                             ),
                           ),
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (BuildContext context) {
+                                    return Forum(title: "Forum",);
+                                  })
+                              );
+                            },
+                            child: new Padding(
+                              padding: new EdgeInsets.all(10.0),
+                              child:Text("Accéder au post",style: TextStyle(color: Colors.blue,fontSize: 13,decoration: TextDecoration.underline)),
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -290,6 +348,21 @@ class _home_page_State extends State<home_page> {
                                     child: Text("${article[4].Overview}")
                                 )
                               ],
+                            ),
+                          ),
+                          //Text("Accéder au post",style: TextStyle(color: Colors.blue,fontSize: 13,decoration: TextDecoration.underline)),
+                          InkWell(
+                            onTap: (){
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(builder: (BuildContext context) {
+                                    return Forum(title: "Forum",);
+                                  })
+                              );
+                            },
+                            child: new Padding(
+                              padding: new EdgeInsets.all(10.0),
+                              child:Text("Accéder au post",style: TextStyle(color: Colors.blue,fontSize: 13,decoration: TextDecoration.underline)),
                             ),
                           ),
                         ],

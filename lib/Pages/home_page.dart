@@ -17,8 +17,8 @@ class home_page extends StatefulWidget {
 
 class _home_page_State extends State<home_page> {
   String _choix = "Aucun choix";
-  
-  List<Article> art;
+
+  List<Article> article;
 
 
   @override
@@ -95,7 +95,7 @@ class _home_page_State extends State<home_page> {
                             child:  Row(
                               children: [
                                 Expanded(
-                                  child: Text("Titre du post",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                                  child: Text("${article[0].Title}",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
                                 ),
                               ],
                             ),
@@ -111,14 +111,14 @@ class _home_page_State extends State<home_page> {
                                     child: Container(
                                       //width: 350,
                                       height: 150,
-                                      child: Image.asset(
-                                        "Assets/Images/owl-2.jpg",
+                                      child: Image.network(
+                                        "https://image.tmdb.org/t/p/original/${article[0].ImageUrl}",
                                       ),
                                     ),
                                   ),
                                 ),
                                 Expanded(
-                                    child: Text("blabla je sais pas quoi dire de cette description qui sert probablement a rien mais je l'aimes bien quand meme.")
+                                    child: Text("${article[0].Overview}")
                                 )
                               ],
                             ),
@@ -138,7 +138,7 @@ class _home_page_State extends State<home_page> {
                             child:  Row(
                               children: [
                                 Expanded(
-                                  child: Text("Titre du post",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                                  child: Text("${article[1].Title}",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
                                 ),
                               ],
                             ),
@@ -154,14 +154,14 @@ class _home_page_State extends State<home_page> {
                                     child: Container(
                                       //width: 350,
                                       height: 150,
-                                      child: Image.asset(
-                                        "Assets/Images/owl-2.jpg",
+                                      child: Image.network(
+                                        "https://image.tmdb.org/t/p/original/${article[1].ImageUrl}",
                                       ),
                                     ),
                                   ),
                                 ),
                                 Expanded(
-                                    child: Text("blabla je sais pas quoi dire de cette description qui sert probablement a rien mais je l'aimes bien quand meme.")
+                                    child: Text("${article[1].Overview}")
                                 )
                               ],
                             ),
@@ -180,7 +180,7 @@ class _home_page_State extends State<home_page> {
                             child:  Row(
                               children: [
                                 Expanded(
-                                  child: Text("Titre du post",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                                  child: Text("${article[2].Title}",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
                                 ),
                               ],
                             ),
@@ -196,14 +196,14 @@ class _home_page_State extends State<home_page> {
                                     child: Container(
                                       //width: 350,
                                       height: 150,
-                                      child: Image.asset(
-                                        "Assets/Images/owl-2.jpg",
+                                      child: Image.network(
+                                        "https://image.tmdb.org/t/p/original/${article[2].ImageUrl}",
                                       ),
                                     ),
                                   ),
                                 ),
                                 Expanded(
-                                    child: Text("blabla je sais pas quoi dire de cette description qui sert probablement a rien mais je l'aimes bien quand meme.")
+                                    child: Text("${article[2].Overview}")
                                 )
                               ],
                             ),
@@ -222,7 +222,7 @@ class _home_page_State extends State<home_page> {
                             child:  Row(
                               children: [
                                 Expanded(
-                                  child: Text("Titre du post",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                                  child: Text("${article[3].Title}",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
                                 ),
                               ],
                             ),
@@ -238,14 +238,14 @@ class _home_page_State extends State<home_page> {
                                     child: Container(
                                       //width: 350,
                                       height: 150,
-                                      child: Image.asset(
-                                        "Assets/Images/owl-2.jpg",
+                                      child: Image.network(
+                                        "https://image.tmdb.org/t/p/original/${article[3].ImageUrl}",
                                       ),
                                     ),
                                   ),
                                 ),
                                 Expanded(
-                                    child: Text("blabla je sais pas quoi dire de cette description qui sert probablement a rien mais je l'aimes bien quand meme.")
+                                    child: Text("${article[3].Overview}")
                                 )
                               ],
                             ),
@@ -264,7 +264,7 @@ class _home_page_State extends State<home_page> {
                             child:  Row(
                               children: [
                                 Expanded(
-                                  child: Text("Titre du post",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
+                                  child: Text("${article[4].Title}",style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),
                                 ),
                               ],
                             ),
@@ -280,14 +280,14 @@ class _home_page_State extends State<home_page> {
                                     child: Container(
                                       //width: 350,
                                       height: 150,
-                                      child: Image.asset(
-                                        "Assets/Images/owl-2.jpg",
+                                      child: Image.network(
+                                        "https://image.tmdb.org/t/p/original/${article[4].ImageUrl}",
                                       ),
                                     ),
                                   ),
                                 ),
                                 Expanded(
-                                    child: Text("blabla je sais pas quoi dire de cette description qui sert probablement a rien mais je l'aimes bien quand meme.")
+                                    child: Text("${article[4].Overview}")
                                 )
                               ],
                             ),
@@ -296,6 +296,7 @@ class _home_page_State extends State<home_page> {
                       ),
                     ),
                   ),
+
                   RaisedButton(onPressed: getPopularArticle,child:Text("API"))
                 ],
               )
@@ -373,11 +374,9 @@ class _home_page_State extends State<home_page> {
     Map<String,dynamic>mapArticles = await api.getArticle();
     if(mapArticles["code"] == 0){
 
-      List<Article> article = Article.articleFromApi(mapArticles["body"]);
+      article = Article.articleFromApi(mapArticles["body"]);
       article.forEach((Article article) {
          print(article.Title);
-         art.add(article);
-
       });
     }else{
       //todo

@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: home_page(title: 'Ministere'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

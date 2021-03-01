@@ -17,7 +17,7 @@ class getPopularArticle{
     if(mapArticles["code"] == 0){
       article = Article.articleFromApi(mapArticles["body"]);
       article.forEach((Article article) {
-        print(article.Title);
+        print("api : "+article.Title);
       });
     }else{
       // isLoading = false;

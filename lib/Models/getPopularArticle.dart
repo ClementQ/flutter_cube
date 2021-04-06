@@ -5,14 +5,15 @@ import 'GetApi.dart';
 
 // ignore: camel_case_types
 class getPopularArticle{
-  // bool isLoading = false;
+  bool isLoading = false;
   List<Article> article;
 
 
   Future<List<Article>> getFromApi() async{
-    // isLoading = true;
+    isLoading = true;
 
     GetApi api = GetApi();
+
     Map<String,dynamic> mapArticles = await api.getArticle();
     if(mapArticles["code"] == 0){
       article = Article.articleFromApi(mapArticles["body"]);
@@ -20,11 +21,15 @@ class getPopularArticle{
         print("api : "+article.Title);
       });
     }else{
-      // isLoading = false;
+      isLoading = false;
+      print(isLoading);
     }
 
-    // isLoading = false;
+    print(isLoading);
     return article;
   }
 
+  bool getLoading(){
+    return isLoading;
+  }
 }

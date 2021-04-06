@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cube/Components/Post.dart';
 import 'package:flutter_cube/Pages/Acount.dart';
 import 'package:flutter_cube/Pages/Forum.dart';
 import 'package:flutter_cube/Pages/Quiz.dart';
@@ -23,9 +24,18 @@ class _Forum_State extends State<Forum> {
         centerTitle: true,
 
       ),
-      body: Center(
-          child:
-          Text("Forum")
+      body: SingleChildScrollView(
+        child:Column(
+          children: [
+            Post(index: 1),
+            Post(index: 2),
+            Post(index: 3),
+            Post(index: 4),
+            Post(index: 5),
+          ],
+        )
+
+
       ),
     );
   }

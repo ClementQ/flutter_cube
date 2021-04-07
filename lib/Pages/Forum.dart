@@ -1,5 +1,8 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cube/Components/Post.dart';
+import 'package:flutter_cube/Models/Article.dart';
+import 'package:flutter_cube/Models/getPopularArticle.dart';
 import 'package:flutter_cube/Pages/Acount.dart';
 import 'package:flutter_cube/Pages/Forum.dart';
 import 'package:flutter_cube/Pages/Quiz.dart';
@@ -15,6 +18,23 @@ class Forum extends StatefulWidget {
 
 class _Forum_State extends State<Forum> {
 
+  List<Article> article;
+  int count;
+
+  void initState(){
+    super.initState();
+    asyncMethod();
+  }
+
+  Future<void> asyncMethod() async {
+    getPopularArticle().getFromApi().then((item){
+      setState(() {
+        article=item;
+      });
+    });
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,19 +44,22 @@ class _Forum_State extends State<Forum> {
         centerTitle: true,
 
       ),
-      body: SingleChildScrollView(
-        child:Column(
+      body:
+      SingleChildScrollView(
+        child: Column(
           children: [
-            Post(index: 1),
-            Post(index: 2),
-            Post(index: 3),
-            Post(index: 4),
-            Post(index: 5),
-          ],
-        )
 
+            for (var i = 0; i < article.length; i++) Post(index :i,redirect: false,),
+          ],
+        ),
 
       ),
+            // Post(index: 1),
+            // Post(index: 2),
+            // Post(index: 3),
+            // Post(index: 4),
+            // Post(index: 5),
+
     );
   }
 }

@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_cube/Components/Post.dart';
@@ -48,11 +50,33 @@ class _Forum_State extends State<Forum> {
       SingleChildScrollView(
         child: Column(
           children: [
+            Center(
+              child: Row(
+                children: [
+                  Expanded(
+                    child:  Container(
+
+                        padding: EdgeInsets.only(top: 20, bottom: 20),
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                image: AssetImage("Assets/Images/ministere-energie_fiche.jpg"),
+                                fit: BoxFit.cover,
+                              )
+                            ),
+                      child: Center(
+                        child:
+                          Text("Sont disponibles ici les différent posts", style: TextStyle(color: Colors.greenAccent, fontWeight: FontWeight.bold),),
+                      )
+                    ),
+                  ),
+                ],
+              ),
+            ),
+
 
             for (var i = 0; i < article.length; i++) Post(index :i,redirect: false,),
           ],
         ),
-
       ),
             // Post(index: 1),
             // Post(index: 2),

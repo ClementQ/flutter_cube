@@ -28,7 +28,7 @@ class _Acount_State extends State<Acount> {
 
   @override
   Widget build(BuildContext context) {
-    if (isConnected == true) {
+    if (isConnected == false) {
       return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
@@ -45,7 +45,7 @@ class _Acount_State extends State<Acount> {
           // Text("${isConnected}")
         ),
       );
-    } else if(isConnected == false){
+    } else if(isConnected == true){
       return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),

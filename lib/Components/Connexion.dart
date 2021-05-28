@@ -53,7 +53,9 @@ class _ConnexionState extends State<Connexion> {
                         Expanded(
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(textStyle:TextStyle(fontSize: 25),primary: Color.fromARGB(255, 39, 78, 168)),
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
                             child: Padding(
                               padding: EdgeInsets.all(10),
                               child: Text('Connexion'),

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_cube/Components/InfoAcount.dart';
+import 'package:flutter_cube/Models/Login.dart';
 import 'package:flutter_cube/Pages/Acount.dart';
 import 'package:flutter_cube/Pages/Forum.dart';
 import 'package:flutter_cube/Pages/Quiz.dart';
@@ -15,8 +17,14 @@ class Acount extends StatefulWidget {
 
 class _Acount_State extends State<Acount> {
 
-  bool isConnected = true;
+  bool isConnected;
+  Login login = Login();
 
+  void initState(){
+    super.initState();
+    isConnected = login.isConnected;
+    // debugPrint("${isConnected}");
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +38,9 @@ class _Acount_State extends State<Acount> {
         ),
         body: Center(
             child:
-                Connexion()
+            SingleChildScrollView(
+                child: Connexion()
+            ),
 
           // Text("${isConnected}")
         ),
@@ -45,8 +55,7 @@ class _Acount_State extends State<Acount> {
         ),
         body: Center(
             child:
-
-            Text("${isConnected}")
+              InfoAcount()
         ),
       );
     }

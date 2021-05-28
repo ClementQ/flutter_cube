@@ -1,5 +1,0 @@
-
-class Connexion{
-  bool isConnected;
-
-}

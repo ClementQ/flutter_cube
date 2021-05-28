@@ -5,8 +5,8 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class Connexion extends StatefulWidget {
-  Connexion({Key key, this.title}) : super(key: key);
-  final String title;
+  Connexion({Key key}) : super(key: key);
+
 
   @override
   _ConnexionState createState() => _ConnexionState();
@@ -16,6 +16,8 @@ class Connexion extends StatefulWidget {
 
 class _ConnexionState extends State<Connexion> {
   @override
+
+
   Widget build(BuildContext context) {
     return
         Container(
@@ -45,7 +47,7 @@ class _ConnexionState extends State<Connexion> {
                   ),
                 ),
                 Padding(
-                    padding: EdgeInsets.only(left: 50,right:50),
+                    padding: EdgeInsets.only(left: 50,right:50,bottom: 50),
                     child: Row(
                       children: [
                         Expanded(

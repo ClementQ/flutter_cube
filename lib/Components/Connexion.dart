@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_cube/Pages/NewAcount.dart';
 
 class Connexion extends StatefulWidget {
   Connexion({Key key}) : super(key: key);
@@ -43,6 +44,26 @@ class _ConnexionState extends State<Connexion> {
                     decoration: InputDecoration(
                         border: OutlineInputBorder(),
                         hintText: 'Password'
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 50,right: 50,bottom: 20),
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (BuildContext context) {
+                            return NewAcount(title: "New acount",);
+                          })
+                      );
+                    },
+                    child: new Padding(
+                      padding: new EdgeInsets.all(10.0),
+                      child: Text("Créer un compte maintenant.", style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 13,
+                          decoration: TextDecoration.underline)),
                     ),
                   ),
                 ),

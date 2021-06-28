@@ -39,6 +39,7 @@ class _PostState extends State<Post> {
     getPopularArticle().getFromApi().then((item){
       setState(() {
         article=item;
+        print(article);
       });
     });
   }
@@ -117,6 +118,7 @@ class _PostState extends State<Post> {
         ),
       );
     }
+      else {
       return Container(
         margin: EdgeInsets.only(top: 5, bottom: 5, right: 20, left: 20),
         child: Card(
@@ -128,7 +130,8 @@ class _PostState extends State<Post> {
                 child: Row(
                   children: [
                     Expanded(
-                      child: Text("${article[widget.index].Title}", style: TextStyle(
+                      child: Text(
+                        "${article[widget.index].Title}", style: TextStyle(
                           fontSize: 15, fontWeight: FontWeight.bold),),
                     ),
                   ],
@@ -146,7 +149,8 @@ class _PostState extends State<Post> {
                           //width: 350,
                           height: 150,
                           child: Image.network(
-                            "https://image.tmdb.org/t/p/original/${article[widget.index].ImageUrl}",
+                            "https://image.tmdb.org/t/p/original/${article[widget
+                                .index].ImageUrl}",
                           ),
                         ),
                       ),
@@ -180,6 +184,8 @@ class _PostState extends State<Post> {
         ),
       );
     }
+  }
+
 
 
 

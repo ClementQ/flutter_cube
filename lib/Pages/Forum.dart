@@ -39,51 +39,115 @@ class _Forum_State extends State<Forum> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-        backgroundColor: Color.fromARGB(255,39,78,168),
-        centerTitle: true,
+    if (article != null) {
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+          backgroundColor: Color.fromARGB(255, 39, 78, 168),
+          centerTitle: true,
 
-      ),
-      body:
-      SingleChildScrollView(
-        child: Column(
-          children: [
-            Center(
-              child: Row(
-                children: [
-                  Expanded(
-                    child:  Container(
+        ),
+        body:
+        SingleChildScrollView(
+          child: Column(
+            children: [
+              Center(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
 
-                        padding: EdgeInsets.only(top: 20, bottom: 20),
-                        decoration: BoxDecoration(
-                            image: DecorationImage(
-                                image: AssetImage("Assets/Images/ministere-energie_fiche.jpg"),
+                          padding: EdgeInsets.only(top: 20, bottom: 20),
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(
+                                    "Assets/Images/ministere-energie_fiche.jpg"),
                                 fit: BoxFit.cover,
                               )
-                            ),
-                      child: Center(
-                        child:
-                          Text("Sont disponibles ici les différent posts", style: TextStyle(color: Colors.greenAccent, fontWeight: FontWeight.bold),),
-                      )
+                          ),
+                          child: Center(
+                            child:
+                            Text("Sont disponibles ici les différent posts",
+                              style: TextStyle(color: Colors.greenAccent,
+                                  fontWeight: FontWeight.bold),),
+                          )
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
-            ),
-
-
-            for (var i = 0; i < article.length; i++) Post(index :i,redirect: false,),
-          ],
+              for (var i = 0; i < article.length; i++) Post(index: i, redirect: false,),
+            ],
+          ),
         ),
-      ),
-            // Post(index: 1),
-            // Post(index: 2),
-            // Post(index: 3),
-            // Post(index: 4),
-            // Post(index: 5),
+        // Post(index: 1),
+        // Post(index: 2),
+        // Post(index: 3),
+        // Post(index: 4),
+        // Post(index: 5),
 
-    );
+      );
+    }
+    else{
+      return Scaffold(
+        appBar: AppBar(
+          title: Text(widget.title),
+          backgroundColor: Color.fromARGB(255, 39, 78, 168),
+          centerTitle: true,
+
+        ),
+        body:
+        SingleChildScrollView(
+          child: Column(
+            children: [
+              Center(
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: Container(
+
+                          padding: EdgeInsets.only(top: 20, bottom: 20),
+                          decoration: BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(
+                                    "Assets/Images/ministere-energie_fiche.jpg"),
+                                fit: BoxFit.cover,
+                              )
+                          ),
+                          child: Center(
+                            child:
+                            Text("Sont disponibles ici les différent posts",
+                              style: TextStyle(color: Colors.greenAccent,
+                                  fontWeight: FontWeight.bold),),
+                          )
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(10),
+                child: Row(
+                  children: [
+                    Expanded(
+                        child: Center(
+                          child:
+                          CircularProgressIndicator(valueColor: new AlwaysStoppedAnimation<Color>(Color.fromARGB(255, 39, 78, 168),),),)
+
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        // Post(index: 1),
+        // Post(index: 2),
+        // Post(index: 3),
+        // Post(index: 4),
+        // Post(index: 5),
+
+      );
+    }
   }
 }

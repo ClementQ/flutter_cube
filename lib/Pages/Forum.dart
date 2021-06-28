@@ -5,10 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cube/Components/Post.dart';
 import 'package:flutter_cube/Models/Article.dart';
 import 'package:flutter_cube/Models/getPopularArticle.dart';
-import 'package:flutter_cube/Pages/Acount.dart';
-import 'package:flutter_cube/Pages/Forum.dart';
-import 'package:flutter_cube/Pages/Quiz.dart';
-import 'package:flutter_cube/Pages/home_page.dart';
 
 class Forum extends StatefulWidget {
   Forum({Key key, this.title}) : super(key: key);
@@ -80,12 +76,6 @@ class _Forum_State extends State<Forum> {
             ],
           ),
         ),
-        // Post(index: 1),
-        // Post(index: 2),
-        // Post(index: 3),
-        // Post(index: 4),
-        // Post(index: 5),
-
       );
     }
     else{
@@ -141,12 +131,6 @@ class _Forum_State extends State<Forum> {
             ],
           ),
         ),
-        // Post(index: 1),
-        // Post(index: 2),
-        // Post(index: 3),
-        // Post(index: 4),
-        // Post(index: 5),
-
       );
     }
   }

@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_cube/Pages/Acount.dart';
-import 'package:flutter_cube/Pages/Forum.dart';
-import 'package:flutter_cube/Pages/Quiz.dart';
-import 'package:flutter_cube/Pages/home_page.dart';
+import 'package:flutter_cube/Components/QuizList.dart';
 
 class Quiz extends StatefulWidget {
   Quiz({Key key, this.title}) : super(key: key);
@@ -19,15 +16,43 @@ class _Quiz_State extends State<Quiz> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        backgroundColor: Color.fromARGB(255,39,78,168),
+        backgroundColor: Color.fromARGB(255, 39, 78, 168),
         centerTitle: true,
 
       ),
-      body: Center(
-          child:
-          Text("Quiz")
-      ),
+      body:
+      SingleChildScrollView(
+        child: Column(
+          children: [
+            Center(
+              child: Row(
+                children: [
+                  Expanded(
+                    child: Container(
 
+                        padding: EdgeInsets.only(top: 20, bottom: 20),
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                              image: AssetImage(
+                                  "Assets/Images/ministere-energie_fiche.jpg"),
+                              fit: BoxFit.cover,
+                            )
+                        ),
+                        child: Center(
+                          child:
+                          Text("Sont disponibles ici les différents Quiz",
+                            style: TextStyle(color: Colors.greenAccent,
+                                fontWeight: FontWeight.bold),),
+                        )
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            QuizList()
+          ],
+        ),
+      ),
     );
   }
 }

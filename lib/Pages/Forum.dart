@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cube/Components/Post.dart';
 import 'package:flutter_cube/Models/Article.dart';
 import 'package:flutter_cube/Models/getPopularArticle.dart';
+import 'package:flutter_cube/Pages/NewPost.dart';
 
 class Forum extends StatefulWidget {
   Forum({Key key, this.title}) : super(key: key);
@@ -72,6 +73,21 @@ class _Forum_State extends State<Forum> {
                   ],
                 ),
               ),
+              Padding(
+                  padding: EdgeInsets.all(10),
+                  child: FloatingActionButton.extended(
+                    onPressed: ()=>{
+                      Navigator.push(context,MaterialPageRoute(
+                        builder: (BuildContext context) {
+                          return NewPost(title: "Add new post",);
+                          })
+                        ),
+                      },
+                    icon: Icon(Icons.add),
+                    label: Text("New post"),
+                  ),
+              ),
+
               for (var i = 0; i < article.length; i++) Post(index: i, redirect: false,),
             ],
           ),

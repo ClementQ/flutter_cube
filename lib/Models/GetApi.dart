@@ -1,3 +1,4 @@
+
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
@@ -8,7 +9,7 @@ class GetApi{
 
   Future<Map<String,dynamic>> getArticle() async{
     http.Response response;
-    String completeUrl = Url + "/movie/popular?api_key=" + Key + "&language="+Lang;
+    Uri completeUrl = Uri.parse(Url + "/movie/popular?api_key=" + Key + "&language="+Lang);
     print(completeUrl);
 
     response = await http.get(completeUrl);

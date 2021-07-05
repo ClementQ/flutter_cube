@@ -29,7 +29,6 @@ class _Quiz_State extends State<Quiz> {
                 children: [
                   Expanded(
                     child: Container(
-
                         padding: EdgeInsets.only(top: 20, bottom: 20),
                         decoration: BoxDecoration(
                             image: DecorationImage(

@@ -46,7 +46,6 @@ class _home_page_State extends State<home_page> {
         backgroundColor: Color.fromARGB(255, 39, 78, 168),
         title: Text(widget.title),
         centerTitle: true,
-
       ),
 
       body:
@@ -54,13 +53,8 @@ class _home_page_State extends State<home_page> {
         child:
           Body(),
       ),
-
       drawer: Drawer(
-        // Add a ListView to the drawer. This ensures the user can scroll
-        // through the options in the drawer if there isn't enough vertical
-        // space to fit everything.
         child: ListView(
-          // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: <Widget>[
             DrawerHeader(

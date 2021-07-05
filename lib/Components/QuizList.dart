@@ -38,7 +38,7 @@ class _QuizListState extends State<QuizList> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (BuildContext context) {
-                                  return QuestionsQuiz(title: "Forum",);
+                                  return QuestionsQuiz(title: "Quiz",);
                                 })
                             );
                           },
@@ -68,7 +68,7 @@ class _QuizListState extends State<QuizList> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(builder: (BuildContext context) {
-                                  return QuestionsQuiz(title: "Forum",);
+                                  return QuestionsQuiz(title: "Quiz",);
                               })
                             );
                           },

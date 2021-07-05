@@ -1,7 +1,6 @@
 
 import 'package:flutter/material.dart';
 
-enum listValues { lafayette, jefferson , Shrek}
 class CardQuestions extends StatefulWidget {
   CardQuestions({Key key, this.tabValues, this.correctVal,this.question}) : super(key: key);
   final List<String> tabValues;

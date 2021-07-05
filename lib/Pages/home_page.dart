@@ -7,6 +7,8 @@ import 'package:flutter_cube/Pages/Forum.dart';
 import 'package:flutter_cube/Pages/Quiz.dart';
 import 'package:flutter_cube/Models/Article.dart';
 
+import 'Conversation.dart';
+
 class home_page extends StatefulWidget {
   home_page({Key key, this.title}) : super(key: key);
   final String title;
@@ -106,6 +108,21 @@ class _home_page_State extends State<home_page> {
                     context,
                     MaterialPageRoute(builder: (BuildContext context) {
                       return Quiz(title: "Quiz",);
+                    })
+                );
+              },
+            ),
+            ListTile(
+              title: Text('Conversation'),
+              onTap: () {
+                // Update the state of the app
+                // ...
+                // Then close the drawer
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (BuildContext context) {
+                      return Conversation(title: "Conversation",);
                     })
                 );
               },

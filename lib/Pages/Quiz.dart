@@ -48,6 +48,10 @@ class _Quiz_State extends State<Quiz> {
                 ],
               ),
             ),
+            QuizList(),
+            QuizList(),
+            QuizList(),
+            QuizList(),
             QuizList()
           ],
         ),

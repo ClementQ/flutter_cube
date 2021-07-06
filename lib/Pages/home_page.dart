@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_cube/Components/Body.dart';
 import 'package:flutter_cube/Models/getPopularArticle.dart';
 import 'package:flutter_cube/Pages/Acount.dart';
+import 'package:flutter_cube/Pages/CGU.dart';
 import 'package:flutter_cube/Pages/Forum.dart';
 import 'package:flutter_cube/Pages/Quiz.dart';
 import 'package:flutter_cube/Models/Article.dart';
@@ -128,6 +129,21 @@ class _home_page_State extends State<home_page> {
                 );
               },
             ),
+            // ListTile(
+            //   title: Text("Conditions générales d'utilisation"),
+            //   onTap: () {
+            //     // Update the state of the app
+            //     // ...
+            //     // Then close the drawer
+            //     Navigator.pop(context);
+            //     Navigator.push(
+            //         context,
+            //         MaterialPageRoute(builder: (BuildContext context) {
+            //           return CGU(title: "CGU",);
+            //         })
+            //     );
+            //   },
+            // ),
           ],
         ),
       ),

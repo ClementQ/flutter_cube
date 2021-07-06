@@ -32,7 +32,7 @@ class _QuestionsQuizState extends State<QuestionsQuiz> {
     body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.only(top: 5, bottom: 5, right: 20, left: 20),
-          child: RadioButton(tabValues: ["1","2","3"],),
+          // child: RadioButton(tabValues: ["1","2","3"],),
         ),
       ),
     );

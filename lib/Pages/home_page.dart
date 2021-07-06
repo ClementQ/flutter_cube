@@ -8,6 +8,7 @@ import 'package:flutter_cube/Pages/Quiz.dart';
 import 'package:flutter_cube/Models/Article.dart';
 
 import 'Conversation.dart';
+import 'ListConversation.dart';
 
 class home_page extends StatefulWidget {
   home_page({Key key, this.title}) : super(key: key);
@@ -122,7 +123,7 @@ class _home_page_State extends State<home_page> {
                 Navigator.push(
                     context,
                     MaterialPageRoute(builder: (BuildContext context) {
-                      return Conversation(title: "Conversation",);
+                      return ListConversation(title: "Conversation",);
                     })
                 );
               },
